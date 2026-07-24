@@ -2,7 +2,8 @@ name: Hello workflow
 on: 
   push
 jobs:
-  runs-on: Ubuntu
+runs-on: Ubuntu
+steps:
 run:
   echo Hello Github Actions
   echo ${{ github.ref}}
