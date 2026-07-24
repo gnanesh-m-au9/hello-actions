@@ -1,0 +1,9 @@
+name: Hello workflow
+on: 
+  push
+jobs:
+  runs-on: Ubuntu
+run:
+  echo Hello Github Actions
+  echo ${{ github.ref}}
+  echo Branch Name ID ${{ github.sha }}
