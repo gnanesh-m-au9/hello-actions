@@ -2,10 +2,11 @@ name: Hello workflow
 on: 
   push: {}
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-  - name: Print context
-  run:
-    echo "Hello Github Actions"
-    echo "${{ github.ref}}""
-    echo "Branch Name ID ${{ github.sha }}""
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print context
+    run:
+      echo "Hello Github Actions"
+      echo "${{ github.ref }}"
+      echo "Branch Name ID ${{ github.sha }}"
