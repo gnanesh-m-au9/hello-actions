@@ -1,6 +1,6 @@
 name: Task 4 - Matrix
 on:
-  push
+  push:
 jobs:
   matrix-test:
     strategy:
@@ -9,9 +9,9 @@ jobs:
         node: [18, 20]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v4
       - name: Setup Node
-        uses: actions /setup-node@v7
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
       - name: Print matrix
