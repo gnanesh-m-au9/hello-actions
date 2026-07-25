@@ -10,38 +10,3 @@ jobs:
           echo "Hello Github Actions"
           echo "${{ github.ref }}"
           echo "Branch Name ID ${{ github.sha }}"
-      
-      - name: Veeresh2 step2
-        run: |
-          echo "Hello Github Actions"
-          echo "${{ github.ref }}"
-          echo "Branch Name ID ${{ github.sha }}"
-
-      - name: Veeresh3 step3
-        run: |
-          echo "Hello Github Actions"
-          echo "${{ github.ref }}"
-          echo "Branch Name ID ${{ github.sha }}" 
-  
-
-  veerabadra2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Veeresh2 step1
-        run: |
-          echo "Hello Github Actions"
-          echo "${{ github.ref }}"
-          echo "Branch Name ID ${{ github.sha }}"
-      
-      - name: Veeresh2 step2
-        run: |
-          echo "Hello Github Actions"
-          echo "${{ github.ref }}"
-          echo "Branch Name ID ${{ github.sha }}"
-
-      - name: Veeresh3 step3
-        run: |
-          echo "Hello Github Actions"
-          echo "${{ github.ref }}"
-          echo "Branch Name ID ${{ github.sha }}"
-
