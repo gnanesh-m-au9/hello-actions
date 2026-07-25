@@ -1,15 +1,17 @@
-name : Task 2 - PR Check
+name: Task 3 - Multi Step
 
 on:
-  pull_request:
-    branches: [main]
-  
+  push:
+
 jobs:
-  pr-check:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: PR info
-        run: |
-          echo "PR Title: ${{ github.event.pull_request.title}}"
-          echo "FROM: ${{ github.head_ref }}"
-          echo "TO: ${{ github.base_ref }}"
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Show files
+        run : las -la
+
+      - name: Simulate build
+        run: echo "Building..."
