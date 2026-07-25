@@ -12,6 +12,9 @@ jobs:
       
       - name: Show files
         run : ls -la
+      
+      - name: Show README content
+        run: cat README.md
 
       - name: Simulate build
         run: echo "Building..."
