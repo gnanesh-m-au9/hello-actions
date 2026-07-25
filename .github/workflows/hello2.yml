@@ -8,6 +8,6 @@ jobs:
     steps:
       - name : Print context
         run: | 
-        echo "Hello Github Actions"
-        echo "Ref: ${{ github.ref }}"
-        echo "SHA: ${{ github.sha }}"
+          echo "Hello Github Actions"
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
