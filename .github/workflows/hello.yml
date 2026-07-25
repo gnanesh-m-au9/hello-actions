@@ -5,7 +5,7 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      run: |
-        echo "Hello Github Actions"
-        echo "${{ github.ref }}"
-        echo "Branch Name ID ${{ github.sha }}"
+      - run: |
+          echo "Hello Github Actions"
+          echo "${{ github.ref }}"
+          echo "Branch Name ID ${{ github.sha }}"
