@@ -1,13 +1,15 @@
-name : Task1 - Hello CI
-on:
-  push:
+name : Task 2 - PR Check
 
+on:
+  pull_request:
+    branches: [main]
+  
 jobs:
-  hello:
+  pr-check:
     runs-on: ubuntu-latest
     steps:
-      - name : Print context
-        run: | 
-          echo "Hello Github Actions"
-          echo "Ref: ${{ github.ref }}"
-          echo "SHA: ${{ github.sha }}"
+      - name: PR info
+        run: |
+          echo "PR Title: ${{ github.event.pull_request.title}}"
+          echo "FROM: ${{ github.head_ref }}"
+          echo "TO: ${{ github.base_ref }}"
