@@ -1,4 +1,4 @@
-name: Task 6 - Artifacts
+name : Task 6 - Artifact
 
 on:
   push:
@@ -10,11 +10,12 @@ jobs:
       - name: Create output
         run: |
           mkdir -p out
-          echo "Build output at $(date)" > out/report.txt
+          echo "Build output as $(date)" > out/report.txt
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-report
+          name: build-artifact
           path: out/report.txt
-          
+
+  
