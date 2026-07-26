@@ -1,20 +1,21 @@
 name: Task 4 - Matrix
+
 on:
   push:
+
 jobs:
   matrix-test:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-lates]
         node: [18, 20]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
       - name: Setup Node
+        uses: actions/checkout@v4
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
       - name: Print matrix
-        run: echo "OS= ${{ matrix.os }} Node=${{ matrix.node }}"
-
-    
+        run: echo "OS=${{ matrix.os }} Node=${{ matrix.node }}"
+      
