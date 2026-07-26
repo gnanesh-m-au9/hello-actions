@@ -1,10 +1,19 @@
-name: Task 8 - Conditions
+name: Task 9 - Manual Deploy
+
 on:
-  push:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: "staging"
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - run : echo "Deploying from main"
+      - run: echo "Deploying to ${{ input.environment }}"
