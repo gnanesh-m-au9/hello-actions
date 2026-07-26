@@ -1,0 +1,41 @@
+name: Task 6 - Cache Debug Lab
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cache-break-intentional:
+    name: Intentional cache mistake
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node with wrong cache mode
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: yarn
+
+      - name: This step should not run
+        run: echo "If you see this, the break step did not fail"
+
+  cache-fix:
+    name: Correct cache setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node with npm cache
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Test
+        run: npm test
