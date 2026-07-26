@@ -1,21 +1,21 @@
-name : Task 6 - Artifact
+name: Task 7 - Job Graph
 
 on:
   push:
 
 jobs:
-  artifacts:
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Create output
-        run: |
-          mkdir -p out
-          echo "Build output as $(date)" > out/report.txt
-      
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifact
-          path: out/report.txt
-
+      - run: echo "Lint OK"
   
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Tests OK"
+  
+  package:
+    needs: [lint, test]
+    runs-on : ubuntu-latest
+    steps:
+      - run: echo "Packaging..."
