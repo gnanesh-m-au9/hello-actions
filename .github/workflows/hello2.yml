@@ -1,21 +1,10 @@
-name: Task 7 - Job Graph
-
+name: Task 8 - Conditions
 on:
   push:
 
 jobs:
-  lint:
+  deploy:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Lint OK"
-  
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Tests OK"
-  
-  package:
-    needs: [lint, test]
-    runs-on : ubuntu-latest
-    steps:
-      - run: echo "Packaging..."
+      - run : echo "Deploying from main"
