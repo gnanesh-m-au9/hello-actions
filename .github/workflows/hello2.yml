@@ -16,4 +16,4 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Deploying to ${{ input.environment }}"
+      - run: echo "Deploying to ${{ inputs.environment }}"
