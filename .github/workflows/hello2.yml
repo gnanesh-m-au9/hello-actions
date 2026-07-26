@@ -1,22 +1,20 @@
-name: Task 5 - Caching
+name: Task 6 - Artifacts
 
 on:
   push:
 
 jobs:
-  cache-learning:
+  artifacts:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-    
-      - name: Install
-        run: npm ci
+      - name: Create output
+        run: |
+          mkdir -p out
+          echo "Build output at $(date)" > out/report.txt
       
-      - name: Test
-        run: npm test
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report
+          path: out/report.txt
           
